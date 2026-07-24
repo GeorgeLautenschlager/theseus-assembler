@@ -1,0 +1,28 @@
+[project]
+name = "agent-assembler"
+version = "0.1.0"
+description = "A lightweight CLI for assembling agents with the Theseus Agent Construction Kit"
+authors = [
+    { name = "George Lautenschlager", email = "georgelautenschlager@gmail.com" },
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "theseus @ git+ssh://git@github.com/GeorgeLautenschlager/theseus.git@v0.5.0",
+]
+
+[project.scripts]
+agent-assembler = "agent_assembler:main"
+
+[tool.poetry]
+packages = [{ include = "agent_assembler.py" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]
